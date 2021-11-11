@@ -83,6 +83,12 @@ asir_cliente:
 **procedimiento de creacion de servicios**
 Explicado con comentarios en el readme
 
+**Para añadir un txt en la zona**
+En db.example.com añadimos por ej:
+<!-- songohanda IN TXT "hijo de songoku"  -->
+
+Comprobamos con dig desde el cliente
+
 
 
 

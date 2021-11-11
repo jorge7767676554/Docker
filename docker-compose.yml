@@ -12,7 +12,7 @@ services:
       - conf:/etc/bind
   asir_cliente:
     container_name: asir_clienteVVVVVVVVVV
-    image: ubuntu
+    image: clienteimaxe
     networks:
       - br02
     stdin_open: true  # docker run -i

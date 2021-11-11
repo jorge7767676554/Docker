@@ -4,24 +4,23 @@ services:
     container_name: asir_bind9VVVVVVVVVV
     image: internetsystemsconsortium/bind9:9.16
     networks:
-       br02:
-        ipv4_address: 10.1.0.254
+       br02: #tiene que ser la interfaz con el nombre que se haya creado
+        ipv4_address: 10.1.0.254 
     ports:
       - 53:53
     volumes:
       - conf:/etc/bind
   asir_cliente:
     container_name: asir_clienteVVVVVVVVVV
-    image: clienteimaxe
+    image: clienteimaxe #imagen con todas las herramientas de red instaladas
     networks:
-      - br02
+      - br02 #para que el cliente y el servidor esten en la misma red
     stdin_open: true  # docker run -i
     tty: true         # docker run -t
     dns:
-      - 10.1.0.254  # el contenedor dns server
-volumes:
+      - 10.1.0.254  # el contenedor dns 
   conf:
-    external: true # tenemos que tenerlo creado previamente
+    external: true # creado previamente
 networks:
-  br02: 
+  br02: #para crear la red que usaran el cliente y el servidor
     external: true
